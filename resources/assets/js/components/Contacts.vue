@@ -127,9 +127,9 @@ export default {
     },
     updateContact(id) {
       console.log(`Updating contact ${id}...`);
-      let params = { ...this.contact };
+      let params = { ...this.contact, _method: "PATCH" };
       axios
-        .patch(`api/contacts/${id}`, params)
+        .post(`api/contacts/${id}`, params)
         .then((response) => {
           this.resetForm(response);
         })
@@ -144,7 +144,7 @@ export default {
       if (this.confirmDelete(contact.name)) {
         console.log(`Deleting contact ${contact.id}...`);
         axios
-          .delete(`api/contacts/${contact.id}`)
+          .post(`api/contacts/${contact.id}`, { _method: "DELETE" })
           .then(() => {
             this.fetchContactList();
           })

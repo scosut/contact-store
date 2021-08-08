@@ -16,6 +16,7 @@ let axios = require('axios').default;
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
+Vue.config.productionTip = false;
 Vue.component('contacts', require('./components/Contacts.vue').default);
 
 const app = new Vue({

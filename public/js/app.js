@@ -1984,9 +1984,11 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
       console.log("Updating contact ".concat(id, "..."));
 
-      var params = _objectSpread({}, this.contact);
+      var params = _objectSpread(_objectSpread({}, this.contact), {}, {
+        _method: "PATCH"
+      });
 
-      axios.patch("api/contacts/".concat(id), params).then(function (response) {
+      axios.post("api/contacts/".concat(id), params).then(function (response) {
         _this4.resetForm(response);
       })["catch"](function (error) {
         return console.log(error);
@@ -2000,7 +2002,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
       if (this.confirmDelete(contact.name)) {
         console.log("Deleting contact ".concat(contact.id, "..."));
-        axios["delete"]("api/contacts/".concat(contact.id)).then(function () {
+        axios.post("api/contacts/".concat(contact.id), {
+          _method: "DELETE"
+        }).then(function () {
           _this5.fetchContactList();
         })["catch"](function (error) {
           return console.log(error);
@@ -45642,6 +45646,7 @@ var axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js").de
  */
 
 
+Vue.config.productionTip = false;
 Vue.component('contacts', __webpack_require__(/*! ./components/Contacts.vue */ "./resources/assets/js/components/Contacts.vue").default);
 var app = new Vue({
   el: '#app'
