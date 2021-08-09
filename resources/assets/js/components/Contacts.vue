@@ -111,7 +111,7 @@ export default {
         .then((response) => {
           this.resetForm(response);
         })
-        .catch((error) => console.log(error.response.data));
+        .catch((error) => console.log(error));
     },
     editContact(id) {
       console.log(`Fetching contact ${id}...`);
