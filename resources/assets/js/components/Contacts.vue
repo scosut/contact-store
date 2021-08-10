@@ -137,7 +137,7 @@ export default {
     },
     confirmDelete(name) {
       return confirm(
-        `You have chosen to delete ${name}. Click 'OK' to proceed or 'CANCEL to abort.`
+        `You have chosen to delete ${name}. Click 'OK' to proceed or 'CANCEL' to abort.`
       );
     },
     deleteContact(contact) {

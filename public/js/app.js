@@ -1995,7 +1995,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       });
     },
     confirmDelete: function confirmDelete(name) {
-      return confirm("You have chosen to delete ".concat(name, ". Click 'OK' to proceed or 'CANCEL to abort."));
+      return confirm("You have chosen to delete ".concat(name, ". Click 'OK' to proceed or 'CANCEL' to abort."));
     },
     deleteContact: function deleteContact(contact) {
       var _this5 = this;
